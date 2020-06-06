@@ -6,7 +6,9 @@ import {
   Switch,
 } from 'react-router-dom';
 import { Divider } from 'semantic-ui-react';
+import NotFound from "../containers/not-found"
 import { endpoints } from './endpoints';
+import MainMenu from '../components/main-menu';
 
 // @ts-ignore
 @withRouter
@@ -16,6 +18,7 @@ export default class Routes extends React.Component {
   render() {
     return (
       <>
+        <MainMenu />
         <Divider hidden={true} />
         <Switch>
           {endpoints.map((route, i) => (
