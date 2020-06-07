@@ -32,7 +32,7 @@ export default class Combustivel extends React.Component<Props> {
               <Header color='blue' as='h2'>
                 <Header.Content>
                   Combustível
-                 <Header.Subheader>Alcool ou Gasolina?</Header.Subheader>
+                 <Header.Subheader>Etanol ou Gasolina?</Header.Subheader>
                 </Header.Content>
               </Header>
             </Grid.Column>
@@ -51,7 +51,7 @@ export default class Combustivel extends React.Component<Props> {
               type='number' placeholder='ex: R$ 2.85' />
             </Form.Field>
           </Form.Group>
-          <Button type='submit'>Consultar</Button>
+          <Button type='submit'>Calcular</Button>
         </Form>
       </Container>
     );
