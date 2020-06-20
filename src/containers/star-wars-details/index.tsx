@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Card, Container, Grid, Header, Image, List } from 'semantic-ui-react';
+import { Button, Card, Container, Grid, Header, Image, List } from 'semantic-ui-react';
 import { inject, observer } from 'mobx-react';
 
 import NewRouterStore from '../../mobx/router.store';
@@ -23,6 +23,10 @@ export default class StarWarsDetails extends React.Component<RouteComponentProps
   }
 
   render() {
+
+    const goBack = () => {
+      this.props.router.goBack();
+    }
 
     const { film } = this.props.starWarsDetails;
 
@@ -61,6 +65,9 @@ export default class StarWarsDetails extends React.Component<RouteComponentProps
                   )
                 })}
               </List>
+            </Card.Content>
+            <Card.Content>
+              <Button onClick={() => goBack()}>Voltar</Button>
             </Card.Content>
           </Card>
         </Card.Group>
