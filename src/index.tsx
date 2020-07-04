@@ -1,5 +1,6 @@
 import './index.css';
 import './plugins/sentry.plugin';
+import './plugins/one-signal.plugin';
 import 'semantic-ui-css/semantic.min.css';
 import './apis/axios.api';
 

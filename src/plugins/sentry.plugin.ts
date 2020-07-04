@@ -1,20 +1,18 @@
-import { configureScope, init } from '@sentry/browser';
+import { configureScope, init } from '@sentry/browser'
+
+import { configs } from '../configs';
 
 (() => {
+  // Desativa o plugin localhost
+  if (window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1') {
+    return;
+  }
 
-    if (window.location.hostname === 'localhost' || 
-        window.location.hostname === '127.0.0.1') {
-        return;
-    }
+  const { sentry } = configs;
 
-    const { REACT_APP_SENTRY_DSN } = process.env;
-    if (!REACT_APP_SENTRY_DSN) {
-        return;
-    }
+  init({ dsn: sentry });
 
-    init({ dsn: REACT_APP_SENTRY_DSN});
-
-    configureScope(scope => {
-
-    });
+  configureScope(scope => {
+  })
 })();
