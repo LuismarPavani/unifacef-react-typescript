@@ -1,5 +1,6 @@
 import { cache } from '../containers/cache/store';
 import { combustivel } from '../containers/combustivel/store';
+import { corona } from '../containers/corona/store';
 import { home } from '../containers/home/store';
 import { register } from '../containers/register/store';
 import { router } from './router.store';
@@ -15,5 +16,6 @@ export {
   starWarsDetails,
   cache,
   tags,
-  register
+  register,
+  corona
 }
