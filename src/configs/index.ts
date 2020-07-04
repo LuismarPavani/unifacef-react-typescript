@@ -3,6 +3,7 @@ export const configs = {
       economia: process.env.REACT_APP_ECONOMIA_URL,
       starWars: process.env.REACT_APP_STAR_WARS_URL,
       correios: process.env.REACT_APP_CEP_URL,
+      github: process.env.REACT_APP_GITHUB_URL
     },
     sentry: process.env.REACT_APP_SENTRY_DNS,
     onesignal: process.env.REACT_APP_ONE_SIGNAL!

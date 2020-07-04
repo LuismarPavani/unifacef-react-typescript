@@ -4,12 +4,9 @@ import { Container, Form, Grid, Header } from 'semantic-ui-react';
 import { inject, observer } from 'mobx-react';
 
 import Cep from '../../components/cep';
+import Github from '../../components/github';
 import NewRouterStore from '../../mobx/router.store';
 import RegisterStore from './store';
-
-//import Github from '../../components/github';
-
-
 
 interface Props {
   router: NewRouterStore;
@@ -22,7 +19,7 @@ export default class Register extends React.Component<Props> {
 
   render() {
 
-    const { handleForm, zipcode } = this.props.register;
+    const { handleForm, zipcode, github } = this.props.register;
 
     return (
       <Container>
@@ -48,7 +45,15 @@ export default class Register extends React.Component<Props> {
               <Cep zipCode={zipcode} />
             </Form.Field>
           </Form.Group>
-          
+          <Form.Group widths='equal'>
+            <Form.Field>
+              <label>Informe o GitHub</label>
+              <input value={github || ''} maxLength={20} name='github' onChange={handleForm} placeholder='Ex: luismar' />
+            </Form.Field>
+            <Form.Field>
+              <Github userName={github} />
+            </Form.Field>
+          </Form.Group>
         </Form>
       </Container >
     );
